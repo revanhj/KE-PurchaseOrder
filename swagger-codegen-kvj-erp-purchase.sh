@@ -1,0 +1,2 @@
+rm -r  src/main/java/com/kvj/erp/purchase/gen
+java -jar ../swagger-codegen-cli-2.2.1.jar generate -i src/main/resources/swagger/kvj-erp-purchase-swagger.yml  --api-package com.kvj.erp.purchase.gen.api  --model-package com.kvj.erp.purchase.gen.model  --group-id com.kvj.erp  --artifact-id kvj-erp-purchase  --artifact-version 1.0.0-DEV-SNAPSHOT  -l spring

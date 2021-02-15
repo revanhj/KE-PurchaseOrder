@@ -1,0 +1,814 @@
+swagger: "2.0"
+info:
+  description: "This is a swagger document for KVJ software''s ERP - Account module . All the REST End Points will be secured with Spring OAuth2 security, you can use the Authorization key `JWT` to access."
+  version: "1.0.0"
+  title: "ERP - Account"
+  termsOfService: "http://kvjsoft.com/terms/"
+ 
+  license:
+    name: "Licenced - KVJ Soft"
+    url: "http://kvjsoft.com/licenses/licence-erp.html"
+host: "localhost:8186"
+basePath: /
+tags:
+  - name: basic-error-controller
+    description: Basic Error Controller
+  - name: purchase-order-controller
+    description: Purchase Order Controller
+paths:
+  /error:
+    get:
+      tags:
+        - basic-error-controller
+      summary: error
+      operationId: errorUsingGET
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            additionalProperties:
+              type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+    head:
+      tags:
+        - basic-error-controller
+      summary: error
+      operationId: errorUsingHEAD
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            additionalProperties:
+              type: object
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      deprecated: false
+    post:
+      tags:
+        - basic-error-controller
+      summary: error
+      operationId: errorUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            additionalProperties:
+              type: object
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+    put:
+      tags:
+        - basic-error-controller
+      summary: error
+      operationId: errorUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            additionalProperties:
+              type: object
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+    delete:
+      tags:
+        - basic-error-controller
+      summary: error
+      operationId: errorUsingDELETE
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            additionalProperties:
+              type: object
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      deprecated: false
+    options:
+      tags:
+        - basic-error-controller
+      summary: error
+      operationId: errorUsingOPTIONS
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            additionalProperties:
+              type: object
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      deprecated: false
+    patch:
+      tags:
+        - basic-error-controller
+      summary: error
+      operationId: errorUsingPATCH
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            additionalProperties:
+              type: object
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      deprecated: false
+  /purchase-order:
+    get:
+      tags:
+        - purchase-order-controller
+      summary: getAll
+      operationId: getAllUsingGET
+      produces:
+        - '*/*'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PurchaseOrder'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+    post:
+      tags:
+        - purchase-order-controller
+      summary: add
+      operationId: addUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: s
+          description: s
+          required: true
+          schema:
+            $ref: '#/definitions/PurchaseOrder'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PurchaseOrder'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+    put:
+      tags:
+        - purchase-order-controller
+      summary: update
+      operationId: updateUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - name: abg
+          in: query
+          required: false
+          type: string
+        - name: ammendmentNumber
+          in: query
+          required: false
+          type: string
+        - name: authorizedSignitor
+          in: query
+          required: false
+          type: string
+        - name: balanceQty
+          in: query
+          required: false
+          type: string
+        - name: billTo
+          in: query
+          required: false
+          type: string
+        - name: cgst
+          in: query
+          required: false
+          type: number
+          format: float
+        - name: code
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: codeWithProject
+          in: query
+          required: false
+          type: string
+        - name: createdOn
+          in: query
+          required: false
+          type: string
+          format: date-time
+        - name: date
+          in: query
+          required: false
+          type: string
+        - name: delivery
+          in: query
+          required: false
+          type: string
+        - name: designation
+          in: query
+          required: false
+          type: string
+        - name: endCustomer
+          in: query
+          required: false
+          type: string
+        - name: enterRefNumberDate
+          in: query
+          required: false
+          type: string
+        - name: freight
+          in: query
+          required: false
+          type: string
+        - name: grandTotalAmount
+          in: query
+          required: false
+          type: number
+          format: float
+        - name: id
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: igst
+          in: query
+          required: false
+          type: number
+          format: float
+        - name: inWords
+          in: query
+          required: false
+          type: string
+        - name: incomeTerms
+          in: query
+          required: false
+          type: string
+        - name: inspection
+          in: query
+          required: false
+          type: string
+        - name: insurence
+          in: query
+          required: false
+          type: string
+        - name: manufacture
+          in: query
+          required: false
+          type: string
+        - name: 'materialDescription[0].createdOn'
+          in: query
+          required: false
+          type: string
+          format: date-time
+        - name: 'materialDescription[0].id'
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: 'materialDescription[0].materialCode'
+          in: query
+          required: false
+          type: string
+        - name: 'materialDescription[0].poQuentity'
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: 'materialDescription[0].purchesOrderId'
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: 'materialDescription[0].remarks'
+          in: query
+          required: false
+          type: string
+        - name: 'materialDescription[0].totalAmount'
+          in: query
+          required: false
+          type: number
+          format: float
+        - name: 'materialDescription[0].unitRate'
+          in: query
+          required: false
+          type: number
+          format: float
+        - name: 'materialDescription[0].updatedOn'
+          in: query
+          required: false
+          type: string
+          format: date-time
+        - name: name
+          in: query
+          required: false
+          type: string
+        - name: packingAndForwarding
+          in: query
+          required: false
+          type: string
+        - name: pay.createdOn
+          in: query
+          required: false
+          type: string
+          format: date-time
+        - name: pay.id
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: pay.payment1
+          in: query
+          required: false
+          type: string
+        - name: pay.payment2
+          in: query
+          required: false
+          type: string
+        - name: pay.payment3
+          in: query
+          required: false
+          type: string
+        - name: pay.payment4
+          in: query
+          required: false
+          type: string
+        - name: pay.updatedOn
+          in: query
+          required: false
+          type: string
+          format: date-time
+        - name: paymentId
+          in: query
+          required: false
+          type: integer
+          format: int32
+        - name: pbg
+          in: query
+          required: false
+          type: string
+        - name: poNumber
+          in: query
+          required: false
+          type: string
+        - name: project
+          in: query
+          required: false
+          type: string
+        - name: remarks
+          in: query
+          required: false
+          type: string
+        - name: sgst
+          in: query
+          required: false
+          type: number
+          format: float
+        - name: shopTo
+          in: query
+          required: false
+          type: string
+        - name: subTotal
+          in: query
+          required: false
+          type: number
+          format: float
+        - name: supplyerName
+          in: query
+          required: false
+          type: string
+        - name: technocalDiscount
+          in: query
+          required: false
+          type: string
+        - name: updatedOn
+          in: query
+          required: false
+          type: string
+          format: date-time
+        - name: warrentry
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PurchaseOrder'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /purchase-order/addall:
+    post:
+      tags:
+        - purchase-order-controller
+      summary: saveAll
+      operationId: saveAllUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - name: entities
+          in: query
+          description: entities
+          required: false
+          type: array
+          items:
+           $ref: '#/definitions/PurchaseOrder'
+          collectionFormat: multi
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PurchaseOrder'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  '/purchase-order/{id}':
+    get:
+      tags:
+        - purchase-order-controller
+      summary: get
+      operationId: getUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PurchaseOrder'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+    delete:
+      tags:
+        - purchase-order-controller
+      summary: deleteById
+      operationId: deleteByIdUsingDELETE
+      produces:
+        - '*/*'
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      deprecated: false
+definitions:
+  ModelAndView:
+    type: object
+    properties:
+      empty:
+        type: boolean
+      model:
+        type: object
+      modelMap:
+        type: object
+        additionalProperties:
+          type: object
+      reference:
+        type: boolean
+      status:
+        type: string
+        enum:
+          - 100 CONTINUE
+          - 101 SWITCHING_PROTOCOLS
+          - 102 PROCESSING
+          - 103 CHECKPOINT
+          - 200 OK
+          - 201 CREATED
+          - 202 ACCEPTED
+          - 203 NON_AUTHORITATIVE_INFORMATION
+          - 204 NO_CONTENT
+          - 205 RESET_CONTENT
+          - 206 PARTIAL_CONTENT
+          - 207 MULTI_STATUS
+          - 208 ALREADY_REPORTED
+          - 226 IM_USED
+          - 300 MULTIPLE_CHOICES
+          - 301 MOVED_PERMANENTLY
+          - 302 FOUND
+          - 302 MOVED_TEMPORARILY
+          - 303 SEE_OTHER
+          - 304 NOT_MODIFIED
+          - 305 USE_PROXY
+          - 307 TEMPORARY_REDIRECT
+          - 308 PERMANENT_REDIRECT
+          - 400 BAD_REQUEST
+          - 401 UNAUTHORIZED
+          - 402 PAYMENT_REQUIRED
+          - 403 FORBIDDEN
+          - 404 NOT_FOUND
+          - 405 METHOD_NOT_ALLOWED
+          - 406 NOT_ACCEPTABLE
+          - 407 PROXY_AUTHENTICATION_REQUIRED
+          - 408 REQUEST_TIMEOUT
+          - 409 CONFLICT
+          - 410 GONE
+          - 411 LENGTH_REQUIRED
+          - 412 PRECONDITION_FAILED
+          - 413 PAYLOAD_TOO_LARGE
+          - 413 REQUEST_ENTITY_TOO_LARGE
+          - 414 URI_TOO_LONG
+          - 414 REQUEST_URI_TOO_LONG
+          - 415 UNSUPPORTED_MEDIA_TYPE
+          - 416 REQUESTED_RANGE_NOT_SATISFIABLE
+          - 417 EXPECTATION_FAILED
+          - 418 I_AM_A_TEAPOT
+          - 419 INSUFFICIENT_SPACE_ON_RESOURCE
+          - 420 METHOD_FAILURE
+          - 421 DESTINATION_LOCKED
+          - 422 UNPROCESSABLE_ENTITY
+          - 423 LOCKED
+          - 424 FAILED_DEPENDENCY
+          - 425 TOO_EARLY
+          - 426 UPGRADE_REQUIRED
+          - 428 PRECONDITION_REQUIRED
+          - 429 TOO_MANY_REQUESTS
+          - 431 REQUEST_HEADER_FIELDS_TOO_LARGE
+          - 451 UNAVAILABLE_FOR_LEGAL_REASONS
+          - 500 INTERNAL_SERVER_ERROR
+          - 501 NOT_IMPLEMENTED
+          - 502 BAD_GATEWAY
+          - 503 SERVICE_UNAVAILABLE
+          - 504 GATEWAY_TIMEOUT
+          - 505 HTTP_VERSION_NOT_SUPPORTED
+          - 506 VARIANT_ALSO_NEGOTIATES
+          - 507 INSUFFICIENT_STORAGE
+          - 508 LOOP_DETECTED
+          - 509 BANDWIDTH_LIMIT_EXCEEDED
+          - 510 NOT_EXTENDED
+          - 511 NETWORK_AUTHENTICATION_REQUIRED
+      view:
+        $ref: '#/definitions/View'
+      viewName:
+        type: string
+    title: ModelAndView
+  Payment:
+    type: object
+    properties:
+      createdOn:
+        type: string
+        format: date-time
+      id:
+        type: integer
+        format: int32
+      payment1:
+        type: string
+      payment2:
+        type: string
+      payment3:
+        type: string
+      payment4:
+        type: string
+      updatedOn:
+        type: string
+        format: date-time
+    title: Payment
+  PurchaseOrder:
+    type: object
+    properties:
+      abg:
+        type: string
+      ammendmentNumber:
+        type: string
+      authorizedSignitor:
+        type: string
+      balanceQty:
+        type: string
+      billTo:
+        type: string
+      cgst:
+        type: number
+        format: float
+      code:
+        type: integer
+        format: int32
+      codeWithProject:
+        type: string
+      createdOn:
+        type: string
+        format: date-time
+      date:
+        type: string
+      delivery:
+        type: string
+      designation:
+        type: string
+      endCustomer:
+        type: string
+      enterRefNumberDate:
+        type: string
+      freight:
+        type: string
+      grandTotalAmount:
+        type: number
+        format: float
+      id:
+        type: integer
+        format: int32
+      igst:
+        type: number
+        format: float
+      inWords:
+        type: string
+      incomeTerms:
+        type: string
+      inspection:
+        type: string
+      insurence:
+        type: string
+      manufacture:
+        type: string
+      materialDescription:
+        type: array
+        items:
+          $ref: '#/definitions/PurchaseOrderItem'
+      name:
+        type: string
+      packingAndForwarding:
+        type: string
+      pay:
+        $ref: '#/definitions/Payment'
+      paymentId:
+        type: integer
+        format: int32
+      pbg:
+        type: string
+      poNumber:
+        type: string
+      project:
+        type: string
+      remarks:
+        type: string
+      sgst:
+        type: number
+        format: float
+      shopTo:
+        type: string
+      subTotal:
+        type: number
+        format: float
+      supplyerName:
+        type: string
+      technocalDiscount:
+        type: string
+      updatedOn:
+        type: string
+        format: date-time
+      warrentry:
+        type: string
+    title: PurchaseOrder
+  PurchaseOrderItem:
+    type: object
+    properties:
+      createdOn:
+        type: string
+        format: date-time
+      id:
+        type: integer
+        format: int32
+      materialCode:
+        type: string
+      poQuentity:
+        type: integer
+        format: int32
+      purchesOrderId:
+        type: integer
+        format: int32
+      remarks:
+        type: string
+      totalAmount:
+        type: number
+        format: float
+      unitRate:
+        type: number
+        format: float
+      updatedOn:
+        type: string
+        format: date-time
+    title: PurchaseOrderItem
+  View:
+    type: object
+    properties:
+      contentType:
+        type: string
+    title: View

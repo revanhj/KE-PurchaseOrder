@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: kvj-erp-purchase
+Implementation-Version: 1.0.0-DEV-SNAPSHOT
+Built-By: madarsha
+Implementation-Vendor-Id: com.kvj.erp
+Build-Jdk: 1.8.0_275
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/kvj-erp-parent/kvj-erp-purchase
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: KVJ Soft
+

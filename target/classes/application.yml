@@ -1,0 +1,16 @@
+server:
+  port: 8183
+
+spring:
+  application:
+    name: kvj-erp-purchase-service
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defautZone: http://localhost:8761/eureka
